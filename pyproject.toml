@@ -1,0 +1,28 @@
+[project]
+name = "devhub"
+version = "0.1"
+description = "CLI interface to devhub"
+readme = "README.md"
+authors = [{name = "Daniel Rust"}]
+license = "Apache-2.0"
+requires-python = ">=3.8"
+classifiers = []
+dependencies = [
+    "click"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/devhub/devhub"
+Changelog = "https://github.com/devhub/devhub/releases"
+Issues = "https://github.com/devhub/devhub/issues"
+CI = "https://github.com/devhub/devhub/actions"
+
+[project.scripts]
+devhub = "devhub.cli:cli"
+
+[project.optional-dependencies]
+test = ["pytest"]
