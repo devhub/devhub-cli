@@ -1,6 +1,6 @@
 [project]
 name = "devhub-cli"
-version = "0.1"
+version = "0.1.1"
 description = "CLI interface to devhub"
 readme = "README.md"
 authors = [{name = "Daniel Rust"}]

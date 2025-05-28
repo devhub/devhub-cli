@@ -13,6 +13,13 @@ Install this tool using `pip`:
 ```bash
 pip install devhub-cli
 ```
+
+Or just install and execute via `uvx`
+
+```
+uvx devhub-cli
+```
+
 ## Usage
 
 For help, run:
@@ -22,6 +29,11 @@ devhub --help
 You can also use:
 ```bash
 python -m devhub --help
+```
+
+Via `uvx`
+```
+uvx devhub-cli
 ```
 
 ## Theme Commands
@@ -127,3 +139,7 @@ To run the tests:
 ```bash
 python -m pytest
 ```
+
+## CLI template
+
+CLI click template based on https://github.com/simonw/click-app
