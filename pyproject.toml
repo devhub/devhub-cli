@@ -27,6 +27,7 @@ CI = "https://github.com/devhub/devhub-cli/actions"
 
 [project.scripts]
 devhub = "devhub.cli:cli"
+devhub-cli = "devhub.cli:cli"
 
 [project.optional-dependencies]
 test = ["pytest"]
