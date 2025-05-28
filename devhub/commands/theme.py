@@ -197,13 +197,39 @@ def init_config():
 
 
 @theme.command()
-def init():
+@click.argument('directory', required=False)
+def init(directory):
     """Initialize theme environment configuration."""
-    click.echo(click.style('Initializing DevHub environment configuration...', fg='green'))
+    original_working_dir = os.environ.get('WORKING_DIR', os.getcwd())
 
-    init_env()
-    init_gitignore()
-    init_config()
+    if directory:
+        # Check if directory already exists
+        if os.path.exists(directory):
+            click.echo(click.style(f'Error: Directory "{directory}" already exists', fg='red'))
+            return
+
+        # Create the directory
+        try:
+            os.makedirs(directory, exist_ok=False)
+            click.echo(click.style(f'Created directory: {directory}', fg='green'))
+        except OSError as e:
+            click.echo(click.style(f'Error creating directory "{directory}": {e}', fg='red'))
+            return
+
+        # Update WORKING_DIR to the new directory
+        absolute_directory = os.path.abspath(directory)
+        os.environ['WORKING_DIR'] = absolute_directory
+        click.echo(click.style(f'Initializing DevHub environment configuration in {absolute_directory}...', fg='green'))
+    else:
+        click.echo(click.style('Initializing DevHub environment configuration...', fg='green'))
+
+    try:
+        init_env()
+        init_gitignore()
+        init_config()
+    finally:
+        # Restore original WORKING_DIR
+        os.environ['WORKING_DIR'] = original_working_dir
 
 
 @theme.command()

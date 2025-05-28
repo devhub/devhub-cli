@@ -45,13 +45,19 @@ The DevHub CLI provides powerful theme management capabilities for synchronizing
 Before using theme commands, you need to initialize your environment:
 
 ```bash
+# Initialize in current directory
 devhub theme init
+
+# Initialize in a new directory
+devhub theme init mybrand-corporate-theme
 ```
 
 This command will:
 - Create a `.env` file with your DevHub API credentials
 - Generate a `.gitignore` file with appropriate exclusions
 - Create a `devhub.conf.json` configuration file
+
+When specifying a directory, the command will create the directory if it doesn't exist and initialize all configuration files within it.
 
 You'll be prompted to enter:
 - `DEVHUB_API_KEY` - Your OAuth1 API key
