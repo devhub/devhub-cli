@@ -7,3 +7,9 @@ venv
 .pytest_cache
 *.egg-info
 .DS_Store
+.env*
+components/
+layouts/
+styles/
+devhub.conf.json
+docs-examples/
