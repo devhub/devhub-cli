@@ -14,11 +14,10 @@ def aikit():
 
 
 @aikit.command()
-def init():
+def init(toolkit_url='https://github.com/devhub/devhub-cli-ai-toolkit/archive/refs/heads/main.zip'):
     """Initialize AI toolkit by downloading and extracting toolkit files."""
     
     working_dir = os.environ.get('WORKING_DIR', os.getcwd())
-    toolkit_url = 'https://github.com/devhub/devhub-cli-ai-toolkit/archive/refs/heads/main.zip'
     
     click.echo(f'Downloading AI toolkit... {toolkit_url}')
     
@@ -76,7 +75,6 @@ def init():
         click.echo(f'Extracted {extracted_count} files, skipped {skipped_count} existing files.')
         
     except Exception as e:
-        raise
         click.echo(click.style(f'Error during AI toolkit initialization: {str(e)}', fg='red'))
     finally:
         # Clean up temporary file
