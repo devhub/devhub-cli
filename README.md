@@ -129,6 +129,26 @@ Required environment variables:
 - `DEVHUB_BASE_URL` - Base URL for DevHub API
 - `DEVHUB_SITE_ID` - Site identifier
 
+## AI Toolkit Commands
+
+The DevHub CLI includes AI toolkit management for setting up AI-powered development tools and templates.
+
+### `devhub aikit init`
+
+Downloads and installs the DevHub AI toolkit to your current working directory.
+
+```bash
+devhub aikit init
+```
+
+This command will:
+- Download the latest AI toolkit from the DevHub CLI AI Toolkit repository
+- Extract all toolkit files to your current directory
+- Skip existing files to avoid overwriting your customizations
+- Provide feedback on extracted and skipped files
+
+The AI toolkit includes templates, examples, and utilities for AI-powered development workflows with DevHub.
+
 ## Development
 
 To contribute to this tool, first checkout the code. Then create a new virtual environment:
