@@ -2,6 +2,7 @@ import click
 from dotenv import load_dotenv
 import os
 
+from .commands.aikit import aikit
 from .commands.theme import theme
 
 if 'WORKING_DIR' not in os.environ:
@@ -18,4 +19,5 @@ load_dotenv(dotenv_path=dotenv_path)
 def cli():
     "CLI interface to devhub"
 
+cli.add_command(aikit)
 cli.add_command(theme)
